@@ -1,0 +1,99 @@
+
+============================================================
+1. DATASET STRUCTURE
+============================================================
+Rows: 1000   Columns: 6
+
+Column data types:
+title               str
+price_gbp       float64
+rating_stars      int64
+availability        str
+category            str
+stock_qty       float64
+
+First 5 rows:
+                     title  price_gbp  rating_stars             availability    category  stock_qty
+0  Whispers Kingdom Vol. 3      31.28             4  In stock (16 available)  Nonfiction       16.0
+1           Secrets Winter      44.32             1   In stock (2 available)     Fiction        2.0
+2                Last Tale      24.05             3  In stock (10 available)  Nonfiction       10.0
+3            Endless Light       9.77             3   In stock (5 available)   Childrens        5.0
+4            Shadows Storm      19.75             3   In stock (5 available)     Mystery        5.0
+
+============================================================
+2. MISSING VALUES
+============================================================
+No missing values found.
+
+============================================================
+3. DUPLICATE ROWS
+============================================================
+Fully duplicated rows: 0
+Duplicate titles (may be legitimate re-editions): 412
+
+============================================================
+4. SUMMARY STATISTICS (numeric columns)
+============================================================
+       price_gbp  rating_stars  stock_qty
+count    1000.00       1000.00    1000.00
+mean       29.05          3.26       9.18
+std        12.57          1.16       6.98
+min         5.00          1.00       1.00
+25%        20.27          3.00       2.00
+50%        28.88          3.00      10.00
+75%        37.35          4.00      16.00
+max        72.44          5.00      20.00
+
+============================================================
+5. OUTLIER CHECK (price, using IQR method)
+============================================================
+Price range considered normal: -5.35 to 62.97 GBP
+Number of price outliers: 4
+
+Sample outliers:
+                   title  price_gbp  category
+350         Hidden Light      67.95  Business
+596          Beyond Path      72.44  Business
+728         Hidden River      65.07    Poetry
+937  Legacy Dream Vol. 3      72.35       Art
+
+============================================================
+6. TRENDS BY CATEGORY
+============================================================
+                 book_count  avg_price  avg_rating  total_stock
+category                                                       
+Mystery                  83      25.82        3.19        764.0
+Biography                75      27.61        3.15        707.0
+Business                 74      45.17        3.26        666.0
+Science Fiction          72      26.27        3.22        684.0
+Childrens                71      26.58        3.27        604.0
+History                  69      26.29        3.42        651.0
+Travel                   69      29.68        3.25        565.0
+Poetry                   68      26.96        3.22        655.0
+Romance                  67      25.81        3.12        547.0
+Philosophy               65      29.88        3.20        629.0
+Art                      63      27.67        3.37        596.0
+Nonfiction               61      27.80        3.30        508.0
+Sequential Art           61      30.39        3.36        566.0
+Fiction                  52      24.96        3.37        515.0
+Fantasy                  50      35.11        3.30        518.0
+
+============================================================
+7. CORRELATION BETWEEN NUMERIC FIELDS
+============================================================
+              price_gbp  rating_stars  stock_qty
+price_gbp         1.000         0.009      0.005
+rating_stars      0.009         1.000      0.009
+stock_qty         0.005         0.009      1.000
+
+Interpretation: values near +1 or -1 indicate a strong relationship; values near 0 indicate little to no linear relationship.
+
+============================================================
+8. ANSWERING KEY QUESTIONS
+============================================================
+Category with highest average price: Business
+Category with highest average rating: History
+Cheapest book: 'Fall Song' at £5.0
+Priciest book: 'Beyond Path' at £72.44
+Overall average rating: 3.26 / 5
+Percentage of books rated 4 stars or higher: 46.0%
